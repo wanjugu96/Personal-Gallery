@@ -3,9 +3,20 @@ from django.db import models
 # Create your models here.
 class Location(models.Model):
     name=models.CharField(max_length=100)
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()
 
 class Category(models.Model):
     name=models.CharField(max_length=100)
+
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()
 
 class Image(models.Model):
     imagepath=models.ImageField(upload_to = 'galleryPhotos/')
@@ -23,15 +34,26 @@ class Image(models.Model):
     def update_image(self,id,imagepath):
        Image.objects.filter(id = id).update(imagepath =imagepath)
 
+    @classmethod
+    def get_image_by_id(cls,id):
+        animage=cls.objects.filter(id=id)
+        return animage
+    
+    @classmethod
+    def search_image(cls,category):
+        images=cls.objects.filter(category=category)  
+        return images 
 
-    def get_image_by_id(self,id):
-        Image.objects.get(id=id)
 
-    def search_image(self,category):
-        Image.objects.filter(category=category)    
+    @classmethod
+    def filter_by_location(cls,location):
+        images=cls.objects.filter(location=location)    
 
+        return images
+    @classmethod
+    def allimages(cls):
+        images=cls.objects.all()    
 
-
-    def filter_by_location(self,location):
-        Image.objects.filter(location=location)    
+        return images
+        
     
