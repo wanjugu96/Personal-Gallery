@@ -4,6 +4,10 @@
     margin-bottom: 5px;
 }
 
+h1 {
+    color: #0D3B66;
+}
+
 .profileimage {
     border-radius: 5px 20px 5px;
 }
