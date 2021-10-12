@@ -1,3 +1,17 @@
-h1 {
-    color: green;
+.navcolor {
+    background-color: #F4D35E;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.profileimage {
+    border-radius: 5px 20px 5px;
+}
+
+.quote {
+    font-style: italic;
+}
+
+.topinfo {
+    background-color: #FAF0CA;
 }

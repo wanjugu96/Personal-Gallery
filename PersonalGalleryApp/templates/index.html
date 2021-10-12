@@ -1,8 +1,21 @@
 {% include 'base.html'%}
+{% load static %}
 {% block content %}
 
 <div class="container">
-
-<h1>. </h1>
+<div class ="row topinfo">
+<div class ="col-md-5 ">
+    <img class ="profileimage" src="{% static 'images/profilep.jpeg' %}" alt="profile picture" width="300" height="400" class="d-inline-block align-text-top" /> 
+</div>
+<div class ="col-md-7">
+<center> 
+<h1>Wanjugu's Gallery</h1>
+<br></br>
+<h4>Hello there, Welcome to my personal gallery. <h4>
+<br></br>
+<h4 class="quote">“Photography is a way of feeling, of touching, of loving. What you have caught on film is captured forever… It remembers little things, long after you have forgotten everything.”</h4>
+<h4 class="quote">– Aaron Siskind</h4>
+</center>
+</div>
 </div>
 {% endblock %}
