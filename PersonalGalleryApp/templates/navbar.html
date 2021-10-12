@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light ">
         <div class="container-fluid navcolor">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{% url 'index' %}">
                 <img src="{% static 'images/gallery.png' %}" alt="" width="30" height="24" class="d-inline-block align-text-top" /> Cugus Gallery
             </a>
 
@@ -34,8 +34,8 @@
                 </ul>
 
             </div>
-            <form class="d-flex" role="search" action="{% url 'search_category' %}"
-                <input class="form-control me-2" type="search" placeholder="Category  e.g Travel" aria-label="Search" name="category">
+            <form class="d-flex" role="search" action="{% url 'search_category' %}">
+                <input class="form-control me-2" type="text" placeholder="Category  e.g Travel" aria-label="Search" name="category">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>

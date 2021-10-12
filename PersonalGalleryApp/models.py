@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.fields.related import ForeignKey
 
 # Create your models here.
 class Location(models.Model):
@@ -40,8 +41,10 @@ class Image(models.Model):
         return animage
     
     @classmethod
-    def search_image(cls,category):
-        images=cls.objects.filter(category=category)  
+    def search_image(cls,search_term):
+        
+
+        images=cls.objects.filter(category__name__icontains=search_term)  
         return images 
 
 

@@ -7,7 +7,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url('^$',views.index,name='index'),
-    url('^location$',views.filter_by_location,name='location'),
+    url('^location/<str:value>/$',views.filter_by_location,name='location'),
     # url(r'^welcome_user/(?P<type>.+)/$','welcome_user')
     url('^search$',views.search_category,name='search_category'),
 
