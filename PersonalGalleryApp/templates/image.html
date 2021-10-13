@@ -1,0 +1,23 @@
+{% include 'base.html'%}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class ="row topinfo">
+        <div class ="col-md-5 ">
+            <img class ="profileimage" src="{{image.imagepath.url}}" alt="profile picture" width="300" height="400" class="d-inline-block align-text-top" /> 
+
+        </div>
+        <div class ="col-md-7">
+            <center> 
+            <h1>{{image.name}}</h1>
+            <br></br>
+            <h4>{{image.description}} <h4>
+            
+            <h4 class="quote">{{image.location.name}}</h4>
+            <span><h4 class="quote">– {{image.category.name}}</h4></span>
+            </center>
+        </div>
+    </div>
+    </div>
+    {%endblock%}

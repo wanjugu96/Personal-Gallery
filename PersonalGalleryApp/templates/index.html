@@ -21,11 +21,13 @@
     <br></br>
     <h1>Context is: {{context}}</h1>
     <center>
-        <a href="location/{{value}}">here {{value}}</a>
-        <input name="name" value={{ value }}>
-        
+        <a href="location/dubai">Dubaiii</a>
+
+    
 {%for location in locations%}
-<p>{{location.name}}<p>
+        {% comment %} <a href="{% url 'filter_by_location' location.name  %}">{{location.name}}</a> {% endcomment %}
+
+<p><p>
 {%endfor%}
 <a href="/location/?location={{location}}">{{location}}</a>
 
@@ -51,6 +53,7 @@
                     <p class="card-text">{{imageitem.description}}</p>
                     <h6>Location: {{imageitem.location.name}} </h6>
                     <h6>Category: {{imageitem.category.name}} </h6>
+                    <a href="{% url 'singleimage' imageitem.id  %}" class="btn btn-primary">See more</a>
                 </div>
    
     

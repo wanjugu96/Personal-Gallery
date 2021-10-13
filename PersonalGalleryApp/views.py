@@ -1,3 +1,4 @@
+from django.http.response import Http404
 from django.shortcuts import render
 from .models import Image,Location
 
@@ -10,16 +11,12 @@ def index(request):
 
     return render(request,'index.html',{"images":images, "locations":locations})
 
-def filter_by_location(request,value):
+def filter_by_location(request,location):
     locations=Location.alllocations()
-    if request.method=='GET':
-        location = request.GET.get('location')
-        if not location:
-            return render(request, 'index.html')
-        else:
-            images=Image.filter_by_location(location)
+    
+    images=Image.filter_by_location(location)
             
-            return render(request,'bylocation.html',{"images":images})
+    return render(request,'bylocation.html',{"images":images})
 
 def search_category(request):
     if 'category' in request.GET and  request.GET["category"]:
@@ -31,3 +28,10 @@ def search_category(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
+
+def singleimage(request,image_id):
+    try:
+        image = Image.objects.get(id = image_id)
+    except DoesNotExist:
+        raise Http404()
+    return render(request,"image.html", {"image":image})
