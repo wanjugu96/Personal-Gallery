@@ -1,25 +1,42 @@
-.navcolor {
-    background-color: #F4D35E;
-    padding: 10px;
-    margin-bottom: 5px;
-}
-
-h1 {
-    color: #0D3B66;
-}
-
-.profileimage {
-    border-radius: 5px 20px 5px;
-}
-
-.quote {
-    font-style: italic;
-}
-
-.topinfo {
-    background-color: whitesmoke;
-}
-
-.sixx {
-    background-color: blue;
-}
+                .navcolor {
+                    background-color: #F4D35E;
+                    padding: 10px;
+                    margin-bottom: 5px;
+                }
+                
+                h1 {
+                    color: #0D3B66;
+                }
+                
+                .profileimage {
+                    border-radius: 5px 20px 5px;
+                }
+                
+                .quote {
+                    font-style: italic;
+                }
+                
+                .topinfo {
+                    background-color: whitesmoke;
+                }
+                /* unvisited link */
+                
+                a:link {
+                    color: blue;
+                    padding: 10px;
+                }
+                /* visited link */
+                
+                a:visited {
+                    color: blue;
+                }
+                /* mouse over link */
+                
+                a:hover {
+                    color: red;
+                }
+                /* selected link */
+                
+                a:active {
+                    color: yellow;
+                }

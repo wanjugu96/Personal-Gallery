@@ -43,6 +43,8 @@
                     <p class="card-text">{{imageitem.description}}</p>
                     <h6>Location: {{imageitem.location.name}} </h6>
                     <h6>Category: {{imageitem.category.name}} </h6>
+                    <a href="{% url 'singleimage' imageitem.id  %}" class="btn btn-primary">See more</a>
+
                 </div>
    
     
