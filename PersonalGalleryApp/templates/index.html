@@ -19,8 +19,16 @@
         </div>
     </div>
     <br></br>
+    <h1>Context is: {{context}}</h1>
     <center>
         <a href="location/{{value}}">here {{value}}</a>
+        <input name="name" value={{ value }}>
+        
+{%for location in locations%}
+<p>{{location.name}}<p>
+{%endfor%}
+<a href="/location/?location={{location}}">{{location}}</a>
+
 
 
     <button type="button" class="btn btn-link">Kenya</button>

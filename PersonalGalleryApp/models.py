@@ -10,6 +10,12 @@ class Location(models.Model):
     def delete_image(self):
         self.delete()
 
+    @classmethod
+    def alllocations(cls):
+        locations=cls.objects.all()    
+
+        return locations    
+
 class Category(models.Model):
     name=models.CharField(max_length=100)
 
@@ -51,6 +57,13 @@ class Image(models.Model):
     @classmethod
     def filter_by_location(cls,location):
         images=cls.objects.filter(location=location)    
+        return images
+        
+    @classmethod
+    def allimages(cls):
+        images=cls.objects.all()    
+
+        return images
 
         return images
     @classmethod

@@ -17,7 +17,10 @@ from django.conf.urls import include
 from django.contrib import admin
 from django.urls import path
 
+from PersonalGalleryApp import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path(r'',include('PersonalGalleryApp.urls'))
+    path(r'',include('PersonalGalleryApp.urls')),
+    # path(r'location/',include('PersonalGalleryApp.urls'))
 ]
