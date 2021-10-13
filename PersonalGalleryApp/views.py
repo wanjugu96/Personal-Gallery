@@ -15,8 +15,8 @@ def filter_by_location(request,location):
     locations=Location.alllocations()
     
     images=Image.filter_by_location(location)
-            
-    return render(request,'bylocation.html',{"images":images})
+    #message=location.name   
+    return render(request,'bylocation.html',{"images":images, "locations":locations, })
 
 def search_category(request):
     if 'category' in request.GET and  request.GET["category"]:

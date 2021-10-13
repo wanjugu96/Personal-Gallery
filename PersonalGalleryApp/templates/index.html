@@ -19,25 +19,19 @@
         </div>
     </div>
     <br></br>
-    <h1>Context is: {{context}}</h1>
-    <center>
-        <a href="location/dubai">Dubaiii</a>
-
     
-{%for location in locations%}
-        {% comment %} <a href="{% url 'filter_by_location' location.name  %}">{{location.name}}</a> {% endcomment %}
+  <center>
+   <b> 
+  
+   {%for location in locations%}
+        <a href="{% url 'filter_by_location' location.name  %}">{{location.name}}</a>
 
-<p><p>
 {%endfor%}
-<a href="/location/?location={{location}}">{{location}}</a>
+    </center>
+    </b>
 
 
 
-    <button type="button" class="btn btn-link">Kenya</button>
-
-    <button type="button" class="btn btn-link">NewYork</button>
-    <button type="button" class="btn btn-link">Seattle</button>
-    <button type="button" class="btn btn-link">Dubai</button>
     </center>
     <center>
     <br></br>

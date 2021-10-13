@@ -20,18 +20,17 @@
     </div>
     <br></br>
     <center>
-<h4>Search results for {{message}}...<h4>
-    <button type="button" class="btn btn-link">Kenya</button>
+<h4>Search results for location selected.</h4>
+   {%for location in locations%}
+        <a href="{% url 'filter_by_location' location.name  %}">{{location.name}}</a>
 
-    <button type="button" class="btn btn-link">NewYork</button>
-    <button type="button" class="btn btn-link">Seattle</button>
-    <button type="button" class="btn btn-link">Dubai</button>
+{%endfor%}
     </center>
     <center>
     <br></br>
 <div class="row topinfo">
-{%if images%}
-<h2> Found {{images|length}}articles for the search term {{message}}</h2>
+{%if images%}search term
+<h2> Found {{images|length}}articles for the this Location selected {{message}}</h2>
     
     {%for imageitem in images%}
     
